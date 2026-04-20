@@ -1,0 +1,25 @@
+:root {
+    /* Background colors */
+    --lightMode:white;
+    --darkMode:  rgb(29, 29, 29);
+
+    /* Background colors for buttons */
+    --primary-btn-color:linear-gradient(150deg, rgb(0, 0, 0), grey);
+    --secondary-btn-color: linear-gradient(150deg, rgb(240, 240, 240), rgb(47, 47, 47));
+    --primary-text: #000000;
+    --secondary-text: #ffffff;
+
+    /* Font variables */
+    /* Sizes */
+    --font-s:0.5rem;
+    --font-md:1rem;
+    --font-lg:1.25rem;
+    --font-xl:1.50rem;
+
+    /* Weight */
+    --bold:bold;
+
+    /* Color */
+    --light-color:black;
+    --dark-color:white;
+}
