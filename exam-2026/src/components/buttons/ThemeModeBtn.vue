@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import MainBtn from './MainBtn.vue'
+import Btn from './Btn.vue'
 import { Sun, Moon } from '@lucide/vue';
 
 const isDark = ref(false);
@@ -15,21 +15,20 @@ function toggleThemeMode(){
 
 <template>
 
-    <MainBtn class="themeBtn" @click="toggleThemeMode">
+    <Btn class="themeBtn" @click="toggleThemeMode" label="Hejsan">
         <Sun class="light" color="white"/>
-        <div>
-
-        </div>
         <Moon class="dark" color="white"/>
-    </MainBtn>
+    </Btn>
 
 </template>
 
-<style>
+<style lang="scss">
 .themeBtn {
     background: var(--primary-btn-color);
     border: 0.125rem solid silver;
     border-radius: 0.5rem;
     box-shadow: 0px 5px 5px 2px rgb(156, 156, 156);
+
+    color: black;
 }
 </style>

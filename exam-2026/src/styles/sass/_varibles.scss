@@ -1,0 +1,40 @@
+
+/* Space sizes */
+$spaceSizes: (
+    1: .125rem,
+    2: .25rem,
+    3: .5rem,
+    4: 1rem ,
+    5: 1.5rem,
+    6: 2rem
+);
+
+$fontSizes: (
+    sm: 0.5rem,
+    md:1rem,
+    lg:1.25rem,
+    xl:1.50rem
+);
+
+$fontColors: (
+    primaryColor: #000000,
+    secondaryColor: #ffffff,
+
+);
+
+/* Background colors for accessibility light and darkmode */
+$colorsBG: (
+    primary: #ffffff,
+    secondary: #000000,
+);
+
+/* Colors for the theme buttons */
+$themeBtnBgColors: (
+    lightMode:linear-gradient(150deg, #000000, #808080),
+    darkMode: linear-gradient(150deg, #f0f0f0, #2f2f2f),
+);
+
+$themeBtnFontColor: (
+    lightModeText: #ffffff,
+    darkModeText: #000000
+)

@@ -1,14 +1,22 @@
 <script setup lang="ts">
-import LightDarkModeBtn from './buttons/LightDarkModeBtn.vue';
-import { Sun } from '@lucide/vue';
+import ThemeModeBtn  from './buttons/ThemeModeBtn.vue';
+import Navbar from './nav/Navbar.vue';
+import Btn from './buttons/Btn.vue';
 
 </script>
 <template>
     <!-- // Using semantisk HTML -->
     <header>
-        <LightDarkModeBtn>
-        </LightDarkModeBtn>
+        <Navbar></Navbar>
+        <Btn />
+        <ThemeModeBtn />
     </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
 
 </template>
 
@@ -17,7 +25,7 @@ import { Sun } from '@lucide/vue';
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     width: 100vw;
@@ -29,11 +37,6 @@ import { Sun } from '@lucide/vue';
 :root[theme="dark"] {
     background-color:var(--darkMode);
     color: var(--dark-color);
-}
-
-:root[theme="dark"] .themeBtn {
-    background-color: var(--secondary-btn-color);
-    color: var(--light-color);
 }
 
 </style>
