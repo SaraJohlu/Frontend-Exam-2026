@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import type { navbarProps } from '../../props';
 
-const {vertical, horizontal} = defineProps<Partial<navbarProps>>();
+
 </script>
 
 <template>
-    <nav :vertical :horizontal>
+    <nav class="nav">
         <slot></slot>
     </nav>
 </template>
+<style lang="scss">
+@use "../../styles/component/Navbar"
+</style>

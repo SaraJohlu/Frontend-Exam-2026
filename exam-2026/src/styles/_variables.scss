@@ -1,4 +1,6 @@
 
+/* Colors */
+
 /* Space sizes */
 $spaceSizes: (
     1: .125rem,
@@ -16,17 +18,18 @@ $fontSizes: (
     xl:1.50rem
 );
 
-$fontColors: (
-    primaryColor: #000000,
-    secondaryColor: #ffffff,
+/* Font colors */
+$primaryColor: #000000;
+$secondaryColor: #ffffff;
+$disableFont: #737373;
 
-);
 
-/* Background colors for accessibility light and darkmode */
-$colorsBG: (
-    primary: #ffffff,
-    secondary: #000000,
-);
+/* Background colors */
+
+$primaryBG: #ffffff;
+$secondaryBG: #000000;
+$linearBG: linear-gradient(150deg, #0000ff, #800080);
+
 
 /* Colors for the theme buttons */
 $themeBtnBgColors: (
@@ -37,4 +40,15 @@ $themeBtnBgColors: (
 $themeBtnFontColor: (
     lightModeText: #ffffff,
     darkModeText: #000000
-)
+);
+
+/* compiling  */
+:root{
+    @each $key, $value in $spaceSizes {
+        --space-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $fontSizes {
+        --font-#{$key}: #{$value};
+    }
+};

@@ -20,3 +20,7 @@ const {label, ariaLabel, ariaDescribed, ariaDisabled, ariaExpanded, ariaLabelBy,
         <slot></slot>
     </button>
 </template>
+
+<style lang="scss">
+@use './../../styles/component/Btn'
+</style>
