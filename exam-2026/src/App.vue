@@ -1,26 +1,31 @@
 <script setup lang="ts">
-import MainApplication from './components/MainApplication.vue'
+import Main from './components/Main.vue'
 </script>
 
 <template>
-  <MainApplication />
+  <Main />
 </template>
 
 <style lang="scss">
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-
-  width: 100%;
+:root {
+  width: 100vw;
   height: auto;
+  background-color: white;
 
-  #app {
+  body {
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
+
+    #app {
+      width: 100%;
+    }
   }
 }
 </style>

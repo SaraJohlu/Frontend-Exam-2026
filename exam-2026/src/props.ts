@@ -26,6 +26,7 @@ export interface btnProps {
     ariaDescribed?: string;
     ariaExpanded: boolean;
     ariaDisabled: boolean;
+    ariaControls?: string;
 
     gap?: styleVariants['gap'];
     variant?: directionVariants;
@@ -43,4 +44,10 @@ export interface navbarProps {
 export interface textProps {
     size?: styleVariants['fontSize'];
     variant?: styleVariants['fontWeight']
+}
+
+export interface modalProps {
+    id: string;
+    ariaLabelledby: string;
+    label: string;
 }

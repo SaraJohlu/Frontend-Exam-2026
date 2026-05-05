@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import Btn from './Btn.vue'
+import Btn from './MainButton.vue'
 import { Sun, Moon } from '@lucide/vue';
 
 const isDark = ref(false);
