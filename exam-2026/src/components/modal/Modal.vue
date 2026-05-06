@@ -2,18 +2,29 @@
 import { ref } from 'vue';
 import type { modalProps } from '../../props';
 
-const {id, ariaLabelledby} = defineProps<Partial<modalProps>>();
+const {id, ariaLabelledby, preventEsc = false} = defineProps<Partial<modalProps>>();
 
 /* declare dialog element in DOM tree as refModal */
 const refModal = ref<HTMLDialogElement | null>(null);
 
+function disableEsc (event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+        event.preventDefault();
+    }
+}
 /* Functions for opening and closing, passing on with the component*/
 function openModal() {
-    refModal.value?.showModal()
+    refModal.value?.showModal();
+    if (preventEsc) {
+        refModal.value?.addEventListener('keydown', disableEsc);
+    }
 }
 
 function closeModal() {
-    refModal.value?.close()
+    refModal.value?.close();
+    if(preventEsc) {
+        refModal.value?.removeEventListener('keydown', disableEsc);
+    }
 }
 
 defineExpose({openModal, closeModal});
@@ -24,10 +35,12 @@ defineExpose({openModal, closeModal});
     <dialog
     :id="id"
     :aria-labelledby="ariaLabelledby"
+    closedby="any"
     ref="refModal"
+    preventEsc
     class="informationModal"
     >
-        <h2 :id="id"> {{ label }}</h2>
+        <h2 :id="id"> {{ label }} </h2>
         <div class="slot-wrapper">
             <div class="information">
                 <slot></slot>
@@ -46,6 +59,7 @@ defineExpose({openModal, closeModal});
 
     h2 {
         margin: 0;
+        font-size: large;
     }
 
     .slot-wrapper {

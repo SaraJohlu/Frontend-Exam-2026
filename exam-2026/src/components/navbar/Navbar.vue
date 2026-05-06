@@ -21,6 +21,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0.5rem;
+    column-gap: 1rem;
 
     width: 100%;
     background: linear-gradient(152deg, rgb(110, 0, 110), rgb(138, 215, 215));
@@ -31,7 +32,7 @@
         padding: 0.150rem;
 
         .logo {
-            width: 125px;
+            width: 100px;
             border-radius: 50%;
             box-shadow: 0px 2px 5px 2px rgb(51, 51, 51);
         }

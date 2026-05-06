@@ -48,6 +48,19 @@ export interface textProps {
 
 export interface modalProps {
     id: string;
-    ariaLabelledby: string;
+    ariaLabelledby?: string;
+    label?: string;
+    preventEsc?: boolean;
+}
+
+export interface containerProps {
+    ariaLabelledby?: string;
+}
+
+export interface inputProps {
     label: string;
+    btnText: string;
+    inputId: string;
+    ariaLabel: string;
+    req: boolean;
 }
