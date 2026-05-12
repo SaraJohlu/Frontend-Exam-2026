@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import type { btnProps } from '../../props';
 
-const {label, ariaLabel, ariaDescribed, ariaDisabled, ariaExpanded, ariaLabelBy, ariaControls, gap="4", variant } = defineProps<Partial<btnProps>>();
+const {label, ariaLabel, ariaDescribed, ariaDisabled, ariaExpanded, ariaLabelBy, ariaControls, gap="4", variant, type } = defineProps<Partial<btnProps>>();
 
 </script>
 
 <template>
     <button
     :label="label"
+    :type="type"
     :gap
     :variant
     :aria-label="ariaLabel"
@@ -19,14 +20,15 @@ const {label, ariaLabel, ariaDescribed, ariaDisabled, ariaExpanded, ariaLabelBy,
     class="btn"
     >
         {{ label }}
-        <slot></slot>
+        <slot>
+        </slot>
     </button>
 </template>
 
 <style lang="scss">
 .btn {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: transparent;
     border: none;

@@ -10,6 +10,7 @@
                alt="Logotype image working as an anchor link"
                class="logo"
             />
+            <span class="tooltip-logo" aria-hidden="true">Start</span>
         </a>
         <slot name="navbarSlot"></slot>
     </nav>
@@ -29,6 +30,7 @@
     box-shadow: 0px 2px 5px 2px rgb(51, 51, 51);
 
     a {
+        position: relative;
         padding: 0.150rem;
 
         .logo {
@@ -36,6 +38,24 @@
             border-radius: 50%;
             box-shadow: 0px 2px 5px 2px rgb(51, 51, 51);
         }
+
+            .tooltip-logo {
+                position: absolute;
+                right: -3.5rem;
+                transform: translateX(-25%);
+                white-space: nowrap;
+                padding: 0.125rem;
+                color: white;
+                font-size: smaller;
+                opacity: 0;
+                transition: opacity 0.2s;
+            }
+
+            &:focus .tooltip-logo {
+                opacity: 1;
+                border: 0.125rem solid white;
+                border-radius: 5px;
+            }
     }
 }
 

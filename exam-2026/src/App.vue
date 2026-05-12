@@ -8,8 +8,6 @@ import Main from './components/Main.vue'
 
 <style lang="scss">
 :root {
-  width: 100vw;
-  height: 100vh;
   background-color: white;
 
   body {
@@ -20,9 +18,6 @@ import Main from './components/Main.vue'
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
-    width: 100%;
-    height: 100vh;
 
     #app {
       width: 100%;

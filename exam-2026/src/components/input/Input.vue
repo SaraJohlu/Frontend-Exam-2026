@@ -3,7 +3,7 @@ import type { inputProps } from '../../props';
 import MainButton from '../buttons/MainButton.vue';
 
 
-const {label, inputId, ariaLabel, req = true, btnText} = defineProps<Partial<inputProps>>();
+const {label, inputId, ariaLabel, req = true, btnText, inputPlaceholder} = defineProps<Partial<inputProps>>();
 </script>
 
 <template>
@@ -15,15 +15,17 @@ const {label, inputId, ariaLabel, req = true, btnText} = defineProps<Partial<inp
         </label>
         <input
             type="text"
+            :placeholder="inputPlaceholder"
             :aria-required="req"
             :id="inputId"
-            :aria-label="ariaLabel"
         />
 
         <MainButton
             type="submit"
+            :aria-label="ariaLabel"
+
         >
-           {{ btnText }}
+            {{ btnText }}
         </MainButton>
     </form>
 </template>

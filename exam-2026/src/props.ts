@@ -27,6 +27,7 @@ export interface btnProps {
     ariaExpanded: boolean;
     ariaDisabled: boolean;
     ariaControls?: string;
+    type?: 'button' | 'submit' | 'reset';
 
     gap?: styleVariants['gap'];
     variant?: directionVariants;
@@ -55,6 +56,7 @@ export interface modalProps {
 
 export interface containerProps {
     ariaLabelledby?: string;
+    direction?: 'row' | 'column';
 }
 
 export interface inputProps {
@@ -63,4 +65,11 @@ export interface inputProps {
     inputId: string;
     ariaLabel: string;
     req: boolean;
+    inputPlaceholder?: string;
+}
+
+export interface accordionProps {
+    date?: Date;
+    label?: string;
+    iconAnimation?: 'left' | 'down';
 }
