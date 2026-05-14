@@ -33,6 +33,7 @@ const {label, ariaLabel, ariaDescribed, ariaDisabled, ariaExpanded, ariaLabelBy,
     background-color: transparent;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 
     h2 {
         font-size: small;

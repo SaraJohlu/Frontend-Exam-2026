@@ -3,7 +3,8 @@ import { ref } from 'vue';
 import type { accordionProps } from '../../props';
 import { ChevronDownCircle } from '@lucide/vue';
 
-const { label, date } = defineProps<Partial<accordionProps>>();
+
+const { label } = defineProps<Partial<accordionProps>>();
 
 const accordionOpen = ref(false);
 
@@ -13,6 +14,7 @@ const accordionOpen = ref(false);
     <details
       id="accrodion-header"
       class="accordion"
+      :open="accordionOpen"
       @toggle="accordionOpen = ($event.target as HTMLDetailsElement).open"
     >
       <summary
@@ -21,8 +23,9 @@ const accordionOpen = ref(false);
         {{ label }}
         <ChevronDownCircle :class="['accordion-icon', { 'accordion-open' : accordionOpen }]" />
       </summary>
-      <div name="accordion-item" class="accordion-item">
-        <slot name="accordion-item"></slot>
+
+      <div class="accordion-container">
+        <slot name="accordion-list"></slot>
       </div>
     </details>
 </template>
@@ -32,32 +35,25 @@ const accordionOpen = ref(false);
 .accordion {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
+    width: 100%;
     box-sizing: border-box;
-    width: 80%;
+    border-radius: 5px;
     padding: 0.5rem;
-
     border: 0.125rem solid rgb(179, 180, 180);
     border-radius: 5px;
-
-    &[open] .accordion-item {
-        animation: slideDown 0.3s ease;
-    }
 
     .accordion-header {
         display: flex;
         width: 100%;
+        box-sizing: border-box;
         justify-content: space-between;
         list-style: none;
         padding: 0.125rem;
         font-size: medium;
+        cursor: pointer;
     }
-
-     &[open] .accordion-header::after{
-            rotate: 45%;
-    }
-
     .accordion-icon {
       transition: transform 0.3s ease;
     }
@@ -65,5 +61,13 @@ const accordionOpen = ref(false);
     .accordion-open {
       transform: rotate(180deg);
     }
+
+    .accordion-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+  }
 }
 </style>
