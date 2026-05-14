@@ -54,8 +54,8 @@ form {
     width: 60%;
 
     label {
-        font-size: medium;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: 450;
         margin-bottom: 0.5rem;
         justify-self: flex-start;
     }
